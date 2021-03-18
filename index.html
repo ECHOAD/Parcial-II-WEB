@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>Agenda Pro</title>
+</head>
+
+<body>
+    <div class="container-md mb-4" id="app">
+        <div class="titulo animate__animated animate__fadeInLeft">
+            <h1>
+                {{titulo}}
+
+                <img src="img/fritu.png" alt="una picalonga" id="picapica" width="150" height="150">
+            </h1>
+        </div>
+
+
+
+        <div class="principal-container mt-4">
+            <div class="tit-form animate__animated animate__fadeIn">
+                <div class="row">
+                    <div class="form offset-3  col-3  offset-md-4 col-lg-5">
+                        <div class="control  ">
+                            <img class="icons" src="./img/name.png" alt="" />
+                            <div class="grupo">
+                                <input type="text" id="txtNombre" placeholder="Nombre" v-model="contactoNombre" v-on:keyup.enter="agregarContacto" /><span class="linea"></span>
+                            </div>
+                        </div>
+
+                        <div class="control">
+                            <img class="icons" src="./img/phone.png" alt="" />
+                            <div class="grupo">
+                                <input type="text" placeholder="Teléfono" id="telefono" v-model="contactoTelefono" v-on:keyup.enter="agregarContacto" /><span class="linea"></span>
+                            </div>
+                        </div>
+
+                        <div class="control">
+                            <img class="icons" src="./img/calendar.png" alt="" />
+
+
+                            <div class="grupo">
+                                <input type="date" placeholder="MM/DD/YYYY" v-model="fechaNacimiento" v-on:keyup.enter="agregarContacto" /><span class="linea"></span>
+                            </div>
+                        </div>
+
+                        <div class="control">
+                            <img class="icons" src="./img/mail.png" alt="" />
+
+                            <div class="grupo">
+                                <input type="email" placeholder="example@example.com" v-model="contactoEmail" v-on:keyup.enter="agregarContacto" /><span class="linea"></span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="botones ">
+                            <button type="submit" id="boton-submit" class="btn btn-primary boton" @click="agregarContacto">
+								Agrega Contacto
+							</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="contact-table pt-3 ">
+                <div class="row">
+
+                    <div class="col-12 ">
+
+                        <table class="table table-light table-hover animate__animated animate__fadeIn mt-4">
+                            <thead class="">
+                                <tr class="head-table">
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Date</th>
+                                    <th>E-Mail</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody v-for="(item, index) of contactos">
+                                <tr :class="[ item.seleccionado ? 'table-info' : ' ']">
+                                    <td>{{item.nombre}}</td>
+                                    <td>{{item.telefono}}</td>
+                                    <td>{{item.date}}</td>
+                                    <td>{{item.email}}</td>
+                                    <td>
+                                        <button class="boton-edit btn btn-success btn-sm" @click="mostrarContacto(index)">
+                                                <img
+                                                    class="icons-table"
+                                                    src="./img/edit.png"
+                                                    alt="Editar"
+                                                />
+                                            </button>
+                                        <button class="boton-delete btn btn-danger btn-sm" @click="eliminar(index)">
+                                                <img
+                                                    class="icons-table"
+                                                    src="./img/delete.png"
+                                                    alt="Eliminar"
+                                                />
+                                            </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./JS/jquery-3.5.1.js"></script>
+    <script src="./JS/jquery.mask.js"></script>
+    <script src="./JS/main.js"></script>
+</body>
+
+</html>
