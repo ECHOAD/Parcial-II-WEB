@@ -175,9 +175,16 @@ thead tr {}
     border-color: #922441;
 }
 
-@media (min-width:565px) {
+@media (min-width:475px) {
     .table {
         width: 200px;
+        padding: auto;
+    }
+    .botones {
+        width: 200px;
+    }
+    .control {
+        text-align: center;
     }
 }
 
