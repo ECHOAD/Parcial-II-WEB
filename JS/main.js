@@ -22,6 +22,8 @@ const app = new Vue({
             this.fechaNacimiento = '';
             this.contactoEmail = ''
         },
+
+
         // -- AGREGAR --
         agregarContacto: function() {
             //Validaciones
@@ -30,9 +32,12 @@ const app = new Vue({
                 this.contactoTelefono === '' ||
                 this.fechaNacimiento === '' ||
                 this.contactoEmail === ''
+
             ) {
                 alert('¡Todos los campos son requeridos!');
             } else {
+
+
                 this.contactos.push({
                     nombre: this.contactoNombre,
                     telefono: this.contactoTelefono,
@@ -54,7 +59,7 @@ const app = new Vue({
                 this.contactoNombre = this.contactos[index].nombre;
                 this.contactoTelefono = this.contactos[index].telefono;
                 this.fechaNacimiento = this.contactos[index].date;
-                this.contactoEmail = this.contactoEmail[index].email;
+                this.contactoEmail = this.contactos[index].email;
             } else {
                 this.editarContacto(index);
                 this.contactos[index].seleccionado = false;
@@ -66,6 +71,8 @@ const app = new Vue({
             this.contactos[index].nombre = this.contactoNombre;
             this.contactos[index].telefono = this.contactoTelefono;
             this.contactos[index].date = this.fechaNacimiento;
+            this.contactos[index].email = this.contactoEmail;
+
             this.btnEdicion = 'Editar';
             this.limpiar();
 
@@ -90,6 +97,17 @@ const app = new Vue({
     },
 });
 
+
+//FRAMEWORK
+
+
+var table = $('.table').DataTable();
+
 $(document).ready(function() {
-    $('#tabla_contactos').DataTable();
+    $('.table').DataTable({
+
+
+    });
+
+
 });

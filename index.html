@@ -82,41 +82,58 @@
 
                     <div class="col-12 ">
 
-                        <table class="table table-light table-hover animate__animated animate__fadeIn mt-4" id="tabla_contactos">
-                            <thead class="">
-                                <tr class="head-table">
+                        <table class="table table-light table-hover animate__animated animate__fadeIn mt-4">
+                            <thead>
+                                <tr class=" head-table ">
                                     <th>Name</th>
                                     <th>Phone Number</th>
                                     <th>Date</th>
                                     <th>E-Mail</th>
-                                    <th></th>
+                                    <th>Modificaciones</th>
                                 </tr>
                             </thead>
 
+
+
                             <tbody v-for="(item, index) of contactos">
-                                <tr :class="[ item.seleccionado ? 'table-info' : ' ']">
+
+
+                                <tr :class="[ item.seleccionado ? 'table-info' : ' '] ">
                                     <td>{{item.nombre}}</td>
                                     <td>{{item.telefono}}</td>
                                     <td>{{item.date}}</td>
                                     <td>{{item.email}}</td>
                                     <td>
-                                        <button class="boton-edit btn btn-success btn-sm" @click="mostrarContacto(index)">
+                                        <button class="boton-edit btn btn-success btn-sm " @click="mostrarContacto(index) ">
                                                 <img
-                                                    class="icons-table"
-                                                    src="./img/edit.png"
-                                                    alt="Editar"
+                                                    class="icons-table "
+                                                    src="./img/edit.png "
+                                                    alt="Editar "
                                                 />
                                             </button>
-                                        <button class="boton-delete btn btn-danger btn-sm" @click="eliminar(index)">
+                                        <button class="boton-delete btn btn-danger btn-sm " @click="eliminar(index) ">
                                                 <img
-                                                    class="icons-table"
-                                                    src="./img/delete.png"
-                                                    alt="Eliminar"
+                                                    class="icons-table "
+                                                    src="./img/delete.png "
+                                                    alt="Eliminar "
                                                 />
                                             </button>
                                     </td>
                                 </tr>
+
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Date</th>
+                                    <th>E-mail</th>
+                                    <th>Modificaciones</th>
+                                </tr>
+                            </tfoot>
+
+
+
                         </table>
 
 
@@ -128,11 +145,11 @@
     </div>
 
 
-    <script src="./JS/jquery-3.5.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
-    <script src="./JS/jquery.mask.js"></script>
-    <script src="./JS/main.js"></script>
+    <script src="./JS/jquery-3.5.1.js "></script>
+    <script type="text/javascript " charset="utf8 " src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js "></script>
+    <script src="./JS/jquery.mask.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    <script src="./JS/main.js "></script>
 </body>
 
 </html>
