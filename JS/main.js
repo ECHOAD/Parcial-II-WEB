@@ -104,10 +104,7 @@ const app = new Vue({
 var table = $('.table').DataTable();
 
 $(document).ready(function() {
-    $('.table').DataTable({
-
-
-    });
+    $('.table').DataTable();
 
 
 });
